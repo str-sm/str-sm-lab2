@@ -12,6 +12,8 @@ SwingUtilities.invokeLater(new Runnable() {
     }
 });
 ```
+2. Odată ce thread-ul a fost întrerupt (adică, odată ce excepția InterruptedException a fost aruncată),
+   flag-ul *interrupted* din clasa _Thread_ este modificat în _false_ și deci _isInterrupted()_ returnează tot _false_.
 
 ## Exercițiul 1: 
 Creați și porniți două fire de execuție cu nume personalizate:
@@ -30,7 +32,7 @@ numere prime.
 4. Implementați o metodă booleană isPrime(int number) în clasa PrimeGenerator pentru a verifica
 dacă un anumit număr este prim.
 5. Implementați metoda run() a interfeței Runnable pentru a genera numere prime în ordine
-crescătoare. Dacă firul curent este întrerupt, nu mai generați numere prime și-și tiparește numele,
+crescătoare. Dacă firul curent este întrerupt, nu mai generează numere prime și-și tiparește numele,
 prioritatea și ultimul număr calculat. Firul curent verifică dacă a fost întrerupt cu ajutorul metodei
 isInterrupted();
 6. În metoda principală, creați două instanțe Thread folosind clasa PrimeGenerator cu nume
